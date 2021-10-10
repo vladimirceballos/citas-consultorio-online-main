@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>Sede</th>
+              <th>Horario</th>
+              <th>Profesionas</th>
+            </tr>
+            {% for cita in all_citas %}
+            <tr>
+              <td>{{cita.id}}</td>
+              <td>{{cita.sede}}</td>
+              <td>{{cita.horario}}</td>
+              <td>{{cita.profesional}}</td>
+            </tr>
+
+            {% endfor %}
+          </table>
+          <label for="horario">Selecciona la cita:</label>
+
+            <select name="horario" id="horario">
+                {% for cita in all_citas %}
+                <option value="{{cita.id}}">{{cita.horario}}</option>
+                {% endfor %}
+            </select>
+    </body>
+</html>
