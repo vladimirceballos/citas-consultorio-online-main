@@ -1,16 +1,22 @@
+import datetime
+
+import random
+
 from flask import render_template, request, redirect, url_for
 from modelos.Usuario import Usuario, crear_usuario
 from modelos.Perfil import Perfil
 from modelos.Horario import Horario
-from modelos.Cita import Cita
+from modelos.Cita import Cita, agendar_cita
 from modelos.Profesional import Profesional
 from modelos.Sede import Sede
 from flask_bcrypt import Bcrypt
 from app import app
 from flask import Flask
 
+app = Flask(__name__)
+
 @app.route('/')
-    def index():
+def index():
         return render_template('index.html')
     
 
